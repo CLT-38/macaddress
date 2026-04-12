@@ -31,6 +31,16 @@ void loop() {
     Serial.printf("MAC Bluetooth: %02X:%02X:%02X:%02X:%02X:%02X\n",
                   bt[0], bt[1], bt[2], bt[3], bt[4], bt[5]);
 
+attention à l'endianess, soit utiliser toString soit inverser les bits de poids faible
+
+  
+Serial.print("MAC Bluetooth: ");
+Serial.println(addr.toString().c_str());
+
+    
+Serial.printf("MAC Bluetooth: %02X:%02X:%02X:%02X:%02X:%02X\n",
+              bt[5], bt[4], bt[3], bt[2], bt[1], bt[0]);
+    
     printed = true;
   }
 }
